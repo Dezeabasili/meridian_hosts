@@ -24,7 +24,7 @@ const GetAllReviews = () => {
             setReviewsList(location.state);
           } else {
             const resp = await axiosWithInterceptors.get(
-              baseURL + "api/v1/reviews"
+              "api/v1/reviews"
             );
             console.log("reviews: ", resp.data.data);
             setReviewsList([...resp.data.data]);

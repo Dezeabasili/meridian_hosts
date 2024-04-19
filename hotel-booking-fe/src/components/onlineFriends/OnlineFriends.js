@@ -61,12 +61,12 @@ const OnlineFriends = () => {
     setIsOpenChatMenuModal(false);
     setIsOpenChatMenu(true);
     try {
-      const res1 = await axiosWithInterceptors.post(baseURL + "api/v1/chats", {
+      const res1 = await axiosWithInterceptors.post("api/v1/chats", {
         chatPartner_Id,
       });
 
       const res2 = await axiosWithInterceptors.get(
-       baseURL + `api/v1/messages/${res1.data._id}`
+       `api/v1/messages/${res1.data._id}`
       );
       // console.log(res2.data);
       setMessages(res2.data);

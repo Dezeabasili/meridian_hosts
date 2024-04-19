@@ -23,7 +23,7 @@ const GetAllHotels = () => {
             setHotelsList(location.state);
           } else {
             const resp = await axiosWithInterceptors.get(
-              baseURL + "api/v1/hotels"
+              "api/v1/hotels"
             );
             // console.log("hotels: ", resp.data.data);
             setHotelsList([...resp.data.data]);

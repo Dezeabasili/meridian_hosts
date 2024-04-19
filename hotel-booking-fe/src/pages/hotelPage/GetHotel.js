@@ -39,7 +39,7 @@ const GetHotel = () => {
               starsToDisplay.current.whiteStars;
           } else {
             const resp = await axiosWithInterceptors.get(
-              baseURL + `api/v1/hotels/${hotel_id}`
+              `api/v1/hotels/${hotel_id}`
             );
             console.log("resp.data.data: ", resp.data.data);
             setHotelToDisplay(resp.data.data);
@@ -79,7 +79,7 @@ const GetHotel = () => {
   const deleteThisHotel = async () => {
     try {
       await axiosWithInterceptors.delete(
-        baseURL + `api/v1/hotels/${hotelToDisplay._id}`
+        `api/v1/hotels/${hotelToDisplay._id}`
       );
       navigate("/hotels");
     } catch (err) {

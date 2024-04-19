@@ -18,7 +18,7 @@ const CreateReview = () => {
     e.preventDefault();
     try {
       
-      const resp = await axiosWithInterceptors.post(baseURL + "api/v1/reviews", {
+      const resp = await axiosWithInterceptors.post("api/v1/reviews", {
         bookingRef,
         rating,
         review

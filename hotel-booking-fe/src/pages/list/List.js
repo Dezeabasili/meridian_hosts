@@ -51,11 +51,11 @@ const List = () => {
       setLoading(true);
       try {
         const res = await axios.get(
-          baseURL + `api/v1/hotels?city=${destination}`
+          `api/v1/hotels?city=${destination}`
         );
         setHotelList([...res.data.data]);
 
-        const resp = await axios.get(baseURL + "api/v1/hotels/allcityrefs");
+        const resp = await axios.get("api/v1/hotels/allcityrefs");
         // console.log("hotels: ", resp.data.data);
         setCityData([...resp.data.data]);
 

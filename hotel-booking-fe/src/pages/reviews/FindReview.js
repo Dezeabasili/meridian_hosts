@@ -14,7 +14,7 @@ const FindReview = () => {
     e.preventDefault();
     try {
       const resp = await axiosWithInterceptors.get(
-        baseURL + `api/v1/reviews?review_id=${review_id}`
+        `api/v1/reviews?review_id=${review_id}`
       );
       console.log(resp.data.data);
       const reviewsToDisplay = [...resp.data.data]

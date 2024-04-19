@@ -25,7 +25,7 @@ const UpdateRoom = () => {
     setOpenHotelModal(false);
     try {
       const resp = await axiosWithInterceptors.patch(
-        baseURL + `api/v1/rooms/${location.state}`,
+        `api/v1/rooms/${location.state}`,
         { title, price, maxPeople, description, addRooms, hotel, removeRooms }
       );
       // console.log(resp.data.data);
@@ -50,7 +50,7 @@ const UpdateRoom = () => {
     } else {
       try {
         const resp = await axiosWithInterceptors.patch(
-          baseURL + `api/v1/rooms/${location.state}`,
+          `api/v1/rooms/${location.state}`,
           { title, price, maxPeople, description, addRooms }
         );
         console.log(resp.data.data);

@@ -26,7 +26,7 @@ const MyAccount = () => {
         setLoading(true);
         setRefresh(false);
         const resp = await axiosWithInterceptors.get(
-          baseURL + "api/v1/users/myaccount",
+          "api/v1/users/myaccount",
           {
             withCredentials: true,
           }
@@ -72,7 +72,7 @@ const MyAccount = () => {
   const deletePhoto = async () => {
     try {
       await axiosWithInterceptors.delete(
-        baseURL + "api/v1/users/myaccount/deletemyphoto"
+        "api/v1/users/myaccount/deletemyphoto"
       );
       
       setRefresh(true);
@@ -93,9 +93,9 @@ const MyAccount = () => {
   const deleteAccount = async () => {
     try {
       await axiosWithInterceptors.delete(
-        baseURL + "api/v1/users/deletemyaccount"
+        "api/v1/users/deletemyaccount"
       );
-      await axios.get(baseURL + "api/v1/auth/logout", {
+      await axios.get("api/v1/auth/logout", {
         withCredentials: true,
       });
       setAuth({});

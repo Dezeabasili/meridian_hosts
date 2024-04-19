@@ -27,7 +27,7 @@ const UpdateMyDetails = () => {
         try {
           setLoading(true);
           const resp = await axiosWithInterceptors.get(
-            baseURL + "api/v1/users/myaccount",
+            "api/v1/users/myaccount",
             {
               withCredentials: true,
             }
@@ -65,7 +65,7 @@ const UpdateMyDetails = () => {
     e.preventDefault();
     try {
       const response = await axiosWithInterceptors.patch(
-        baseURL + "api/v1/users/updatemyaccount",
+        "api/v1/users/updatemyaccount",
         { name, username, email }
       );
 

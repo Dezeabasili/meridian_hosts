@@ -39,12 +39,12 @@ const Hotel = () => {
     const hotelData = async () => {
       try {
         setLoading(true);
-        const res = await axiosWithInterceptors.get(baseURL + `api/v1/hotels/${hotel_id}`);
+        const res = await axiosWithInterceptors.get(`api/v1/hotels/${hotel_id}`);
         // console.log('res.data.data: ', res.data.data)
         setHotelInfo({ ...res.data.data });
 
         const res2 = await axiosWithInterceptors.get(
-          baseURL + `api/v1/hotels/room/${hotel_id}`
+          `api/v1/hotels/room/${hotel_id}`
         );
 
         setRoomInfo([...res2.data.data]);
@@ -143,7 +143,7 @@ const Hotel = () => {
 
       // send data to process payment
       const resp = await axiosWithInterceptors.post(
-        baseURL + "api/v1/stripe/create-checkout-session",
+        "api/v1/stripe/create-checkout-session",
         { selectedRooms, reservedDates: ref2.current, hotel_id }
       );
     

@@ -34,13 +34,13 @@ const CreateHotel = () => {
         setLoading(true);
         try {
           const resp = await axiosWithInterceptors.get(
-            baseURL + "api/v1/hotels/allcityrefs"
+            "api/v1/hotels/allcityrefs"
           );
           // console.log("hotels: ", resp.data.data);
           setCityData([...resp.data.data]);
 
           const resp2 = await axiosWithInterceptors.get(
-            baseURL + "api/v1/hotels/allhoteltyperefs"
+            "api/v1/hotels/allhoteltyperefs"
           );
           // console.log("hotels: ", resp.data.data);
           setHotelTypeData([...resp2.data.data]);
@@ -83,7 +83,7 @@ const CreateHotel = () => {
         address,
       };
 
-      const resp = await axiosWithInterceptors.post(baseURL + "api/v1/hotels", {
+      const resp = await axiosWithInterceptors.post("api/v1/hotels", {
         name,
         city,
         type,
